@@ -6,9 +6,27 @@ public class Explosion : MonoBehaviour
 {
     public SpriteRenderer centerSprite;
     public List<SpriteRenderer> directionSprites;
+    public int explosionRange = 2;
+
+    private int stopLayer;
+    private int colliderLayer;
+    private Vector2 TileSize = new Vector2(0.95f, 0.95f);
+
+    private int Offset(int i) => i + 1;
+
+    private int ZRotation(Direction direction) => direction switch
+    {
+        Direction.Up => -90,
+        Direction.Down => 90,
+        Direction.Right => 180,
+        Direction.Left => 0,
+        _ => throw new ArgumentOutOfRangeException(nameof(direction), $"Not expected direction value: {direction}"),
+    };
 
     private void Start()
     {
+        stopLayer = LayerMask.NameToLayer("Wall");
+        colliderLayer = LayerMask.GetMask("Bomb", "Player", "Wall", "Enemies");
         Reinitialize();
     }
 
@@ -19,14 +37,49 @@ public class Explosion : MonoBehaviour
             directionSprite.enabled = false;
     }
 
-    private int ZRotation(Direction direction) => direction switch
+    public void StartExplosion(Vector2 explosionPosition)
     {
-        Direction.Up => -90,
-        Direction.Down => 90,
-        Direction.Right => 180,
-        Direction.Left => 0,
-        _ => throw new ArgumentOutOfRangeException(nameof(direction), $"Not expected direction value: {direction}"),
-    };
+        CheckCollisions(explosionPosition);
+    }
+
+    private void CheckCollisions(Vector2 position)
+    {
+        CheckCollisionAt(position); //center
+        DrawCenterExplosion(position);
+
+        foreach (Direction direction in (Direction[])System.Enum.GetValues(typeof(Direction))) //foreach directions
+            CheckCollisionAtDirection(direction);
+    }
+
+    private void CheckCollisionAtDirection(Direction direction)
+    {
+        for (int i = 0; i < explosionRange; i++)
+        {
+            Vector2 position = transform.position.GetOffsetPosition(direction, Offset(i));
+            DrawDirectionExplosion(position, direction);
+            if (CheckCollisionAt(position))
+                break;
+        }
+    }
+
+    //Call the hitable objects on hit and return whether the explosion should be stop or not
+    private bool CheckCollisionAt(Vector2 position)
+    {
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(position, TileSize, 0, colliderLayer);
+        bool hitAWall = false;
+
+        foreach (Collider2D collider in collider2Ds)
+        {
+            Hitable hitable = collider.gameObject.GetComponent<Hitable>();
+
+            if (hitable)
+                hitable.Hit(collider, position);
+
+            if (collider.gameObject.layer == stopLayer)
+                hitAWall = true;
+        }
+        return hitAWall;
+    }
 
     public void DrawCenterExplosion(Vector2 position)
     {

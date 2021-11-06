@@ -10,7 +10,7 @@ public enum Direction
 
 public static class ExtensionFunc
 {
-    public static Vector2 GetPlayerPositionWithinBox(this Vector3 worldPosition)
+    public static Vector2 GetPlayerTilePosition(this Vector3 worldPosition)
     {
         Vector2 position = worldPosition;
         position.x = (position.x >= 0) ? (int)position.x + 0.5f : (int)position.x - 0.5f;
@@ -18,37 +18,37 @@ public static class ExtensionFunc
         return position;
     }
 
-    public static Vector2 GetPositionWithinBox(this Vector3 worldPosition)
+    public static Vector2 GetTilePosition(this Vector3 worldPosition)
     {
-        Vector2 position = worldPosition.GetPlayerPositionWithinBox();
+        Vector2 position = worldPosition.GetPlayerTilePosition();
         position.y += 0.5f;
         return position;
     }
 
-    public static Vector2 GetOffsetPosition(this Vector3 position, Direction direction, int offset)
+    public static Vector2 GetOffsetPosition(this Vector3 worldPosition, Direction direction, int offset)
     {
         switch (direction)
         {
             case Direction.Up:
-                position.y += offset;
+                worldPosition.y += offset;
                 break;
 
             case Direction.Down:
-                position.y -= offset;
+                worldPosition.y -= offset;
                 break;
 
             case Direction.Left:
-                position.x += offset;
+                worldPosition.x += offset;
                 break;
 
             case Direction.Right:
-                position.x -= offset;
+                worldPosition.x -= offset;
                 break;
 
             default:
                 break;
         }
 
-        return position;
+        return worldPosition;
     }
 }

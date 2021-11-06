@@ -17,7 +17,7 @@ public class Moveable : MonoBehaviour
     public void Move(Vector2 direction)
     {
         if (direction != lastDirection)
-            transform.position = transform.position.GetPlayerPositionWithinBox();
+            transform.position = transform.position.GetPlayerTilePosition();
 
         anim.SetInteger("HorzSpeed", (int)direction.x);
         anim.SetInteger("VertSpeed", (int)direction.y);
