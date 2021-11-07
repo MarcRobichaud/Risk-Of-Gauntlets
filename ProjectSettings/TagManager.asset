@@ -18,9 +18,9 @@ TagManager:
   - Bomb
   - Enemies
   - Wall
-  - 
-  - 
-  - 
+  - Explosion
+  - DestructibleWall
+  - Wanderer
   - 
   - 
   - 
@@ -45,4 +45,7 @@ TagManager:
     locked: 0
   - name: CenterExplosion
     uniqueID: 376024827
+    locked: 0
+  - name: Wanderer
+    uniqueID: 510822769
     locked: 0

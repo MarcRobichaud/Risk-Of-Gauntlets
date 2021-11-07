@@ -126,10 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3138d1e68c59a424c8f0a74cc76e0b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRange: 2
-  lengthOfTicking: 3
+  lengthOfTicking: 2
   lengthOfExplosion: 1
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 6080521031865376112, guid: 51ce29e718fbaaf4c94dea96090b602f, type: 3}
   OnExplode:
     m_PersistentCalls:
       m_Calls:
@@ -202,6 +201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d8164a728d12b44a5237c325cfa952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layersHitableBy:
+    serializedVersion: 2
+    m_Bits: 256
   OnHit:
     m_PersistentCalls:
       m_Calls:
@@ -217,6 +219,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnHitColl:
-    m_PersistentCalls:
-      m_Calls: []

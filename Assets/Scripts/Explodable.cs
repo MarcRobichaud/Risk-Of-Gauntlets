@@ -10,6 +10,7 @@ internal enum ExplodableState
 
 public class Explodable : MonoBehaviour
 {
+    public int explosionRange = 1;
     public float lengthOfTicking = 3;
     public float lengthOfExplosion = 1;
     public Explosion explosionPrefab;
@@ -28,6 +29,7 @@ public class Explodable : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         droppable = GetComponent<Droppable>();
         explosion = Instantiate(explosionPrefab);
+        explosion.explosionRange = explosionRange;
     }
 
     private void Update()
@@ -72,7 +74,7 @@ public class Explodable : MonoBehaviour
     {
         collid.enabled = false;
         spriteRenderer.enabled = false;
-        explosion.StartExplosion(transform.position);
+        explosion.StartExplosion(transform.position.GetTilePosition());
         timeStarted = Time.time;
         explodableState = ExplodableState.Explode;
     }
