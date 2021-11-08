@@ -22,6 +22,7 @@ public class Pickable : MonoBehaviour
             sprite.enabled = false;
             collider.enabled = false;
             OnPickUp?.Invoke();
+            Destroy(gameObject);
         }
     }
 }

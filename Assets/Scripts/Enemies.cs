@@ -2,11 +2,17 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
+    public Pickable bombUpgrade;
+    public Pickable bomb;
+    public float bombCooldown = 6;
+
+    private bool isAlive = true;
+    private float timeStarted;
     private SpriteRenderer sprite;
     private Collider2D collid;
     private Moveable moveable;
-
     private Explodable explodable;
+    private Dropper dropper;
     private Direction lastDirection;
 
     private Vector2 movement;
@@ -17,11 +23,22 @@ public class Enemies : MonoBehaviour
         collid = GetComponent<Collider2D>();
         moveable = GetComponent<Moveable>();
         explodable = GetComponent<Explodable>();
+        dropper = GetComponent<Dropper>();
         Reinitialize();
+    }
+
+    private void Update()
+    {
+        if (dropper && Time.time > timeStarted + bombCooldown && isAlive)
+        {
+            dropper.Drop();
+            timeStarted = Time.time;
+        }
     }
 
     public void Reinitialize()
     {
+        timeStarted = Time.time;
         lastDirection = Direction.Up;
         sprite.enabled = true;
         collid.enabled = true;
@@ -52,6 +69,11 @@ public class Enemies : MonoBehaviour
 
     private void Die()
     {
+        isAlive = false;
+        int i = ExtensionFunc.RandNumber(0, 2);
+        Pickable newPickable = (i == 0) ? Instantiate(bombUpgrade) : Instantiate(bomb);
+        newPickable.transform.position = transform.position.GetTilePosition();
+        newPickable.gameObject.SetActive(true);
         sprite.enabled = false;
         collid.enabled = false;
         moveable.Move(new Vector2(0, 0));

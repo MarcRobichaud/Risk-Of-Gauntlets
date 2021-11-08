@@ -10,6 +10,12 @@ public enum Direction
 
 public static class ExtensionFunc
 {
+    public static int RandNumber(int min, int max)
+    {
+        var rand = new System.Random();
+        return rand.Next(min, max);
+    }
+
     public static Direction GetRandomDirection()
     {
         var rand = new System.Random();
