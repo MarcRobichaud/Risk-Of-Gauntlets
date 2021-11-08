@@ -4,8 +4,8 @@ using UnityEngine.Events;
 public class Droppable : MonoBehaviour
 {
     public UnityEvent<int> OnDroppableDropped;
+    [HideInInspector] public Dropper dropper;
 
-    private Dropper dropper;
     private SpriteRenderer spriteRenderer;
     private Collider2D collid;
 

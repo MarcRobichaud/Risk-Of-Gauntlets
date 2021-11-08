@@ -49,3 +49,6 @@ TagManager:
   - name: Wanderer
     uniqueID: 510822769
     locked: 0
+  - name: IndestructibleWall
+    uniqueID: 273626867
+    locked: 0

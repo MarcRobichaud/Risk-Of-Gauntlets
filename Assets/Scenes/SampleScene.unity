@@ -819,11 +819,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4087050290126025065, guid: bc82a674fbea4484bb63367bc4e018d5, type: 3}
       propertyPath: m_Name
-      value: Exploder (1)
+      value: Exploder
       objectReference: {fileID: 0}
     - target: {fileID: 4087050290126025066, guid: bc82a674fbea4484bb63367bc4e018d5, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4087050290126025066, guid: bc82a674fbea4484bb63367bc4e018d5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1018,7 +1018,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8844223, y: -1, z: -10}
+  m_LocalPosition: {x: -1.8924732, y: -1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1818,8 +1818,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 273626867
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -2642,7 +2642,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3347699159091102738, guid: a643f3fa198d37d4ab1ab85ca6b2831d, type: 3}
       propertyPath: m_Name
-      value: Fastifat (1)
+      value: Fastifat
       objectReference: {fileID: 0}
     - target: {fileID: 3347699159091102740, guid: a643f3fa198d37d4ab1ab85ca6b2831d, type: 3}
       propertyPath: bomb
@@ -2658,7 +2658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347699159091102742, guid: a643f3fa198d37d4ab1ab85ca6b2831d, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3347699159091102742, guid: a643f3fa198d37d4ab1ab85ca6b2831d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2865,7 +2865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7110813372092304177, guid: d8002aced5d612e4f8a5dcd4603f2a70, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7110813372092304177, guid: d8002aced5d612e4f8a5dcd4603f2a70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2909,7 +2909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7110813372092304178, guid: d8002aced5d612e4f8a5dcd4603f2a70, type: 3}
       propertyPath: m_Name
-      value: Wanderer (1)
+      value: Wanderer
       objectReference: {fileID: 0}
     - target: {fileID: 7110813372092304178, guid: d8002aced5d612e4f8a5dcd4603f2a70, type: 3}
       propertyPath: m_Layer
@@ -2999,8 +2999,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 273626867
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -3691,7 +3691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7179343131038482502, guid: 2e6564cb732e86542807e15dd4ef145e, type: 3}
       propertyPath: m_Name
-      value: Bomber (1)
+      value: Bomber
       objectReference: {fileID: 0}
     - target: {fileID: 7238928961232573168, guid: 2e6564cb732e86542807e15dd4ef145e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3818,7 +3818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7110813372092304177, guid: d8002aced5d612e4f8a5dcd4603f2a70, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7110813372092304177, guid: d8002aced5d612e4f8a5dcd4603f2a70, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3889,10 +3889,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 645025106965740572, guid: b47e7940d635091488cc395e78435a6a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1374272136820869519, guid: b47e7940d635091488cc395e78435a6a, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3941,10 +3937,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -7.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5740028194798848147, guid: b47e7940d635091488cc395e78435a6a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8940614317825477239, guid: b47e7940d635091488cc395e78435a6a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3976,7 +3968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347699159091102742, guid: a643f3fa198d37d4ab1ab85ca6b2831d, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3347699159091102742, guid: a643f3fa198d37d4ab1ab85ca6b2831d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4102,7 +4094,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7179343131038482501, guid: 2e6564cb732e86542807e15dd4ef145e, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7179343131038482501, guid: 2e6564cb732e86542807e15dd4ef145e, type: 3}
       propertyPath: m_LocalPosition.x

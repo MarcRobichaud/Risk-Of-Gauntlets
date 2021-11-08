@@ -64,6 +64,8 @@ public class Explodable : MonoBehaviour
         explosion.explosionRange = explosionRange;
         if (explodableState == ExplodableState.Waiting)
         {
+            if (droppable)
+                OnExplode.AddListener(droppable.dropper.PickUp);
             timeStarted = Time.time;
             explodableState = ExplodableState.Ticking;
         }
@@ -82,7 +84,10 @@ public class Explodable : MonoBehaviour
     {
         explosion.Reinitialize();
         if (droppable)
+        {
             OnExplode?.Invoke(droppable);
+            OnExplode.RemoveListener(droppable.dropper.PickUp);
+        }
         explodableState = ExplodableState.Waiting;
     }
 }

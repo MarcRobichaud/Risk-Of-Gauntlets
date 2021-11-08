@@ -66,7 +66,7 @@ public class Explosion : MonoBehaviour
     private bool CheckCollisionAt(Vector2 position)
     {
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(position, TileSize, 0, colliderLayer);
-        bool hitAWall = false;
+        bool stopped = false;
 
         foreach (Collider2D collider in collider2Ds)
         {
@@ -76,9 +76,9 @@ public class Explosion : MonoBehaviour
                 hitable.Hit(collider, position, gameObject.layer);
 
             if (stopLayer == (stopLayer | (1 << collider.gameObject.layer)))
-                hitAWall = true;
+                stopped = true;
         }
-        return hitAWall;
+        return stopped;
     }
 
     public void DrawCenterExplosion(Vector2 position)

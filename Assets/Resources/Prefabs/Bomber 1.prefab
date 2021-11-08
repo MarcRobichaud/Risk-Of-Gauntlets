@@ -129,6 +129,14 @@ PrefabInstance:
       value: 2048
       objectReference: {fileID: 0}
     - target: {fileID: 3130918027411507211, guid: bd11810dc66b9f840b1f024d512f726d, type: 3}
+      propertyPath: lengthOfTicking
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130918027411507211, guid: bd11810dc66b9f840b1f024d512f726d, type: 3}
+      propertyPath: OnExplode.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130918027411507211, guid: bd11810dc66b9f840b1f024d512f726d, type: 3}
       propertyPath: OnExplode.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}

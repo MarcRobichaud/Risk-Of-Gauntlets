@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum Direction
@@ -52,30 +53,12 @@ public static class ExtensionFunc
         return position;
     }
 
-    public static Vector2 GetOffsetPosition(this Vector3 worldPosition, Direction direction, int offset)
+    public static Vector2 GetOffsetPosition(this Vector3 worldPosition, Direction direction, int offset) => direction switch
     {
-        switch (direction)
-        {
-            case Direction.Up:
-                worldPosition.y += offset;
-                break;
-
-            case Direction.Down:
-                worldPosition.y -= offset;
-                break;
-
-            case Direction.Left:
-                worldPosition.x -= offset;
-                break;
-
-            case Direction.Right:
-                worldPosition.x += offset;
-                break;
-
-            default:
-                break;
-        }
-
-        return worldPosition;
-    }
+        Direction.Up => worldPosition += new Vector3(0, offset),
+        Direction.Down => worldPosition += new Vector3(0, -offset),
+        Direction.Right => worldPosition += new Vector3(-offset, 0),
+        Direction.Left => worldPosition += new Vector3(offset, 0),
+        _ => throw new ArgumentOutOfRangeException(nameof(direction), $"Not expected direction value: {direction}"),
+    };
 }

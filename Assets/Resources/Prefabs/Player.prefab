@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8940614317825477239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.192232, y: -1.2487297, z: -1.7560639}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1752535635736754242}
@@ -97,6 +97,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BombUpgradePickable
       objectReference: {fileID: 0}
+    - target: {fileID: 5063904033634321111, guid: dea627146a4e27246a78be957225965f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dea627146a4e27246a78be957225965f, type: 3}
 --- !u!4 &5740028194798848151 stripped
@@ -114,6 +118,10 @@ PrefabInstance:
     - target: {fileID: -7249115945548726508, guid: bd11810dc66b9f840b1f024d512f726d, type: 3}
       propertyPath: layersHitableBy.m_Bits
       value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130918027411507211, guid: bd11810dc66b9f840b1f024d512f726d, type: 3}
+      propertyPath: OnExplode.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3130918027411507211, guid: bd11810dc66b9f840b1f024d512f726d, type: 3}
       propertyPath: OnExplode.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -279,6 +287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BombPickable
       objectReference: {fileID: 0}
+    - target: {fileID: 7668902127960625994, guid: 79c5a9063cb791c40a63605922ce9259, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7668902127960626038, guid: 79c5a9063cb791c40a63605922ce9259, type: 3}
       propertyPath: OnPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -357,6 +369,14 @@ PrefabInstance:
       propertyPath: droppables.Array.data[0]
       value: 
       objectReference: {fileID: 8273262473462763263}
+    - target: {fileID: 3993345348926327298, guid: 0a17412c9e5460a45b74ada885d62857, type: 3}
+      propertyPath: AliveAnimatorController
+      value: 
+      objectReference: {fileID: 9100000, guid: eb91f5a51c0992140a011987296add2c, type: 2}
+    - target: {fileID: 3993345348926327298, guid: 0a17412c9e5460a45b74ada885d62857, type: 3}
+      propertyPath: DeathAnimatorController
+      value: 
+      objectReference: {fileID: 9100000, guid: 2adf4aea1388669419a57675298fec94, type: 2}
     - target: {fileID: 8019112430650286697, guid: 0a17412c9e5460a45b74ada885d62857, type: 3}
       propertyPath: m_Size.x
       value: 0.6666667

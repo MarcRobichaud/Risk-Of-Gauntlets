@@ -29,7 +29,7 @@ public class Enemies : MonoBehaviour
 
     private void Update()
     {
-        if (dropper && Time.time > timeStarted + bombCooldown && isAlive)
+        if (dropper && Time.time > (timeStarted + bombCooldown) && isAlive)
         {
             dropper.Drop();
             timeStarted = Time.time;
