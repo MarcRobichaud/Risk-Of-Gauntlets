@@ -8,9 +8,7 @@ public class Explosion : MonoBehaviour
     public List<SpriteRenderer> directionSprites;
     public int explosionRange = 2;
 
-    //private List<Collider2D> colliders;
     private LayerMask stopLayer;
-
     private int colliderLayer;
     private Vector2 TileSize = new Vector2(0.95f, 0.95f);
 
@@ -27,9 +25,6 @@ public class Explosion : MonoBehaviour
 
     private void Start()
     {
-        //colliders.Add(centerSprite.GetComponent<Collider2D>());
-        //colliders.Add(directionSprites[0].GetComponent<Collider2D>());
-        //Debug.Log(colliders.Count);
         stopLayer = LayerMask.GetMask("Wall", "DestructibleWall");
         colliderLayer = LayerMask.GetMask("Bomb", "Player", "Wall", "DestructibleWall", "Enemies", "Wanderer");
         Reinitialize();
@@ -40,15 +35,11 @@ public class Explosion : MonoBehaviour
         centerSprite.enabled = false;
         foreach (var directionSprite in directionSprites)
             directionSprite.enabled = false;
-        //foreach (var collider in colliders)
-        //    collider.enabled = false;
     }
 
     public void StartExplosion(Vector2 explosionPosition)
     {
         CheckCollisions(explosionPosition);
-        //foreach (var collider in colliders)
-        //    collider.enabled = true;
     }
 
     private void CheckCollisions(Vector2 position)
@@ -112,7 +103,6 @@ public class Explosion : MonoBehaviour
         if (!isDrawn)
         {
             directionSprites.Add(InstantiateDirectionSprite());
-            //colliders.Add(directionSprites[directionSprites.Count - 1].GetComponent<Collider2D>());
             UpdateSprite(directionSprites[directionSprites.Count - 1], position, ZRotation(direction));
         }
     }

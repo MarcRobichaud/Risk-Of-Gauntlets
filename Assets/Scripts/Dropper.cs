@@ -4,11 +4,13 @@ using UnityEngine;
 public class Dropper : MonoBehaviour
 {
     public List<Droppable> droppables;
+    public int dropLevel;
 
     private int colliderLayer;
 
     private void Start()
     {
+        dropLevel = 1;
         colliderLayer = LayerMask.GetMask("Bomb");
     }
 
@@ -25,5 +27,15 @@ public class Dropper : MonoBehaviour
     public void PickUp(Droppable droppable)
     {
         droppables.Add(droppable);
+    }
+
+    public void PickUpInstantiate(Droppable droppable)
+    {
+        droppables.Add(Instantiate(droppable));
+    }
+
+    public void DropLevelUp()
+    {
+        dropLevel++;
     }
 }

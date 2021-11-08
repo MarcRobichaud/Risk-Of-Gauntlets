@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class Droppable : MonoBehaviour
 {
-    public UnityEvent OnDroppableDropped;
+    public UnityEvent<int> OnDroppableDropped;
 
     private Dropper dropper;
     private SpriteRenderer spriteRenderer;
@@ -22,7 +22,7 @@ public class Droppable : MonoBehaviour
         collid.enabled = true;
         collid.isTrigger = true;
         spriteRenderer.enabled = true;
-        OnDroppableDropped?.Invoke();
+        OnDroppableDropped?.Invoke(dropper.dropLevel);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

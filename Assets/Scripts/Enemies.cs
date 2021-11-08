@@ -47,7 +47,7 @@ public class Enemies : MonoBehaviour
     {
         Die();
         if (explodable)
-            explodable.StartExploding();
+            explodable.StartTicking(5);
     }
 
     private void Die()

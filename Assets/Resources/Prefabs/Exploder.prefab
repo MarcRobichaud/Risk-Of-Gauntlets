@@ -224,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionRange: 5
   lengthOfTicking: 0
-  lengthOfExplosion: 1
+  lengthOfExplosion: 0.25
   explosionPrefab: {fileID: 6080521031865376112, guid: 51ce29e718fbaaf4c94dea96090b602f, type: 3}
   OnExplode:
     m_PersistentCalls:

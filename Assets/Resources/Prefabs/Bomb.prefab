@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7305906022272994486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 5.53, z: -25.067099}
+  m_LocalPosition: {x: -2.5, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,13 +102,13 @@ MonoBehaviour:
   OnDroppableDropped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3130918027411507211}
-        m_TargetAssemblyTypeName: Explodable, Assembly-CSharp
-        m_MethodName: StartTicking
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lengthOfTicking: 2
-  lengthOfExplosion: 1
+  lengthOfExplosion: 0.25
   explosionPrefab: {fileID: 6080521031865376112, guid: 51ce29e718fbaaf4c94dea96090b602f, type: 3}
   OnExplode:
     m_PersistentCalls:
