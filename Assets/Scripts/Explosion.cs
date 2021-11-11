@@ -47,7 +47,7 @@ public class Explosion : MonoBehaviour
         CheckCollisionAt(position); //center
         DrawCenterExplosion(position);
 
-        foreach (Direction direction in (Direction[])System.Enum.GetValues(typeof(Direction))) //foreach directions
+        foreach (Direction direction in (Direction[])Enum.GetValues(typeof(Direction))) //foreach directions
             CheckCollisionAtDirection(direction);
     }
 

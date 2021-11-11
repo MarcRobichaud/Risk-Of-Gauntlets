@@ -37,13 +37,11 @@ public class Player : MonoBehaviour
             default:
                 break;
         }
-        animator.runtimeAnimatorController = DeathAnimatorController;
     }
 
     private void OnHitPlayerAlive()
     {
         playerState = PlayerState.HalfDead;
-        //TODO Reset player position or maybe not
         animator.runtimeAnimatorController = DeathAnimatorController;
     }
 
