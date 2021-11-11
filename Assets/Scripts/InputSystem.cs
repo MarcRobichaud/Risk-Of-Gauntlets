@@ -12,7 +12,7 @@ public class InputSystem : MonoBehaviour
     public KeyCode Right = KeyCode.RightArrow;
     public KeyCode Left = KeyCode.LeftArrow;
 
-    private void Update()
+    private void FixedUpdate()
     {
         Vector2 direction = new Vector2();
 
@@ -27,7 +27,10 @@ public class InputSystem : MonoBehaviour
             direction.x = -1;
 
         directionPressed?.Invoke(direction);
+    }
 
+    private void Update()
+    {
         if (Input.GetKeyDown(DropBomb))
             OnDropBombPressed?.Invoke();
     }
