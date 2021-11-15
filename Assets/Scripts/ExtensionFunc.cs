@@ -55,10 +55,10 @@ public static class ExtensionFunc
 
     public static Vector2 GetOffsetPosition(this Vector3 worldPosition, Direction direction, int offset) => direction switch
     {
-        Direction.Up => worldPosition += new Vector3(0, offset),
-        Direction.Down => worldPosition += new Vector3(0, -offset),
-        Direction.Right => worldPosition += new Vector3(-offset, 0),
-        Direction.Left => worldPosition += new Vector3(offset, 0),
+        Direction.Up => worldPosition + new Vector3(0, offset),
+        Direction.Down => worldPosition + new Vector3(0, -offset),
+        Direction.Right => worldPosition + new Vector3(-offset, 0),
+        Direction.Left => worldPosition + new Vector3(offset, 0),
         _ => throw new ArgumentOutOfRangeException(nameof(direction), $"Not expected direction value: {direction}"),
     };
 }
